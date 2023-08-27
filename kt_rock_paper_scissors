@@ -103,11 +103,13 @@ class Game:
                 break
 
             # does user want to continue or quit
-            continue_game = input("Type 'quit' to end the game or press Enter to continue: ").lower()
-    
+            continue_game = input("Type 'quit' to end the game or"
+                                  " press Enter to continue: ").lower()
+
             while continue_game not in ['quit', '']:
                 print("Invalid input. Please type 'quit' or press Enter.")
-                continue_game = input("Type 'quit' to end the game or press Enter to continue: ").lower()
+                continue_game = input("Type 'quit' to end the game"
+                                      " or press Enter to continue: ").lower()
 
             if continue_game == 'quit':
                 break
@@ -115,7 +117,7 @@ class Game:
             round_num += 1
 
         print(f"Final Score: Player 1: {self.p1_score},"
-            f" Player 2: {self.p2_score}") 
+              f" Player 2: {self.p2_score}")
         if self.p1_score > self.p2_score:
             print("Player 1 wins the game!")
         elif self.p2_score > self.p1_score:
@@ -125,17 +127,16 @@ class Game:
         print("Game over!")
 
 
-
 if __name__ == '__main__':
     print("Playing against ReflectPlayer:")
     game = Game(HumanPlayer(), ReflectPlayer())
     game.play_game()
 
-    play_next = input("Would you like to play against the CyclePlayer? (yes/no): ").lower()
+    play_next = input("Would you like to play against"
+                      " the CyclePlayer? (yes/no): ").lower()
     if play_next == 'yes':
         print("\nPlaying against CyclePlayer:")
         game = Game(HumanPlayer(), CyclePlayer())
         game.play_game()
     else:
         print("Thanks for playing!")
-
