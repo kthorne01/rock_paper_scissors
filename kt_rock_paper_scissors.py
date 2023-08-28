@@ -15,6 +15,14 @@ class Player:
 
     def learn(self, my_move, their_move):
         pass
+    
+
+class AllRockPlayer(Player):
+    def move(self):
+        return 'rock'
+
+    def learn(self, my_move, their_move):
+        pass
 
 
 # need to create the RandomPlayer subclass
