@@ -88,8 +88,9 @@ class Game:
             print("Player 2 wins this round!")
         else:
             print("It's a tie!")
-        # self.p1.learn(move1, move2)
-        # self.p2.learn(move2, move1)
+        print(f"Current Score: Player 1: {self.p1_score}, Player 2: {self.p2_score}")
+        self.p1.learn(move1, move2)
+        self.p2.learn(move2, move1)
 
     def play_game(self):
         print("Game start!")
